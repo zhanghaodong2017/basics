@@ -1,0 +1,8 @@
+主流的java虚拟机：HotSpot VM（Oracle），linux开源的有 openjdk，IBMJDK
+
+1、JVM内存结构
+JVM内存结构、Java内存模型和Java对象模型,三个截然不同的概念，但是很多人容易弄混
+
+
+2、GC垃圾回收算法
+3、JVM优化
