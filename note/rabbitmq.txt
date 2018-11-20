@@ -1,0 +1,42 @@
+https://www.cnblogs.com/ericli-ericli/p/5902270.html
+D:\Program Files\erl9.3
+
+
+"D:\Program Files\RabbitMQ Server\rabbitmq_server-3.7.7\sbin\rabbitmq-plugins.bat" enable rabbitmq_management
+
+net stop RabbitMQ && net start RabbitMQ
+
+rabbitmqctl.bat list_users
+
+rabbitmqctl.bat add_user zhd 123
+
+rabbitmqctl.bat set_user_tags zhd administrator
+
+除了上面的administrator 还有 monitoring、policymaker、management、自定义名称 ，对应上面介绍到的不同的角色。
+
+rabbitmqctl.bat  set_permissions -p / zhd '.*' '.*' '.*'
+rabbitmqctl.bat  set_permissions -p / zhd '.*' '.*' '.*'
+
+http://localhost:15672/#/
+
+
+https://blog.csdn.net/zhouxianling233/article/details/79623204
+
+
+
+https://www.cnblogs.com/LipeiNet/p/5977028.html
+
+
+
+
+https://blog.csdn.net/chunlongyu/article/details/53844393
+
+https://www.jianshu.com/p/eb7a36d25b2a
+
+
+
+
+
+
+
+
