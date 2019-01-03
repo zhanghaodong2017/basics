@@ -1,5 +1,8 @@
 package com.zhd.basics.javabase.collections;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+
 /**
  * @Author: zhanghaodong
  * @Description
@@ -7,34 +10,20 @@ package com.zhd.basics.javabase.collections;
  */
 public class MapList {
 
+    static final int MAXIMUM_CAPACITY = 1 << 30;
+
     public static void main(String[] args) {
-//        HashMap<String, String> map = new HashMap<String, String>();
-//        map.put("abc","123");
+        HashMap<String, String> map = new HashMap<String, String>();
 
-        Object key = "bac";
-        int h = key.hashCode();
-        System.out.println(key.hashCode());
-        System.out.println(h >>> 16);
-        int index = (h) ^ (h >>> 16);
-        System.out.println(index);
 
-        System.out.println(8 >>> 2);
-
-        System.out.println(15 & 97284);
         System.out.println("--------------分割---------------");
-
-        for (int i = 16; i < 33; i++) {
-            int fenm = 30;
-            System.out.print(i);
-            System.out.print("  ,  ");
-            System.out.print(fenm % i);
-            System.out.print("  ,  ");
-            System.out.println(fenm & (i - 1));
+        for (int i = 0; i < 17; i++) {
+            map.put("abc" + i, "123" + i);
 
         }
+        System.out.println(map);
+        ArrayList<String> arrayList = new ArrayList<String>();
 
-        System.out.println("--------------分割---------------");
-        System.out.println(getMaxLength(34));
 
 
     }
@@ -58,5 +47,21 @@ public class MapList {
 
         return Integer.MAX_VALUE;
 
+    }
+
+    static final int tableSizeFor(int cap) {
+        int n = cap - 1;
+        System.out.println(n);
+        n |= n >>> 1;
+        System.out.println(n);
+        n |= n >>> 2;
+        System.out.println(n);
+        n |= n >>> 4;
+        System.out.println(n);
+        n |= n >>> 8;
+        System.out.println(n);
+        n |= n >>> 16;
+        System.out.println(n);
+        return (n < 0) ? 1 : (n >= MAXIMUM_CAPACITY) ? MAXIMUM_CAPACITY : n + 1;
     }
 }
