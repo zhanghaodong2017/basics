@@ -32,6 +32,18 @@ public class SingleLinkedList<E> {
         return true;
     }
 
+    public boolean add(SingleLinkedList<? extends E> linkedList) {
+        if (linkedList.size() <= 0) {
+            return false;
+        }
+        Object[] array = linkedList.toArray();
+        for (int i = 0; i < array.length; i++) {
+            add((E) array[i]);
+        }
+        return true;
+
+    }
+
 /*    public boolean removeAll(Object o) {
         boolean flag = false;
         while (remove(o)) {
@@ -186,10 +198,37 @@ public class SingleLinkedList<E> {
     public Object[] toArray() {
         Object[] objects = new Object[size];
         int i = 0;
-        for (Node<E> x = fist; x != null; x = x.next) {
-            objects[i++] = x.item;
+        for (Node<E> eNode = fist; eNode != null; eNode = eNode.next) {
+            objects[i++] = eNode.item;
         }
         return objects;
+    }
+
+    public SingleLinkedList clone() {
+        SingleLinkedList newList = new SingleLinkedList();
+        newList.add(this);
+        return newList;
+    }
+
+    /**
+     * 反转
+     */
+    public void reversal() {
+        if (fist == null) {
+            return;
+        }
+        if (fist.next == null) {
+            return;
+        }
+        this.last = this.fist;
+        Node<E> preNode = null;
+        for (Node<E> xNode = this.fist; xNode != null; ) {
+            Node<E> next = xNode.next;
+            xNode.next = preNode;
+            preNode = xNode;
+            xNode = next;
+        }
+        this.fist = preNode;
     }
 
     private static class Node<E> {
@@ -201,5 +240,4 @@ public class SingleLinkedList<E> {
             this.next = next;
         }
     }
-
 }

@@ -1,5 +1,7 @@
 package com.zhd.basics.javabase.collections;
 
+import java.util.Arrays;
+
 /**
  * @Author: zhanghaodong
  * @Description
@@ -7,5 +9,7 @@ package com.zhd.basics.javabase.collections;
  */
 public class MyHashMap {
 
-
+    public static void main(String[] args) {
+        Arrays.sort();
+    }
 }

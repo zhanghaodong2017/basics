@@ -1,5 +1,6 @@
 package com.zhd.basics.javabase.link;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 
 /**
@@ -47,9 +48,6 @@ public class LinkTest {
         objects = linkedList.toArray();
         System.out.println(linkedList.size());
         System.out.println(Arrays.toString(objects));
-
-
-
 
     }
 }

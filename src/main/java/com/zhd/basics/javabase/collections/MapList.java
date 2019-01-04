@@ -2,6 +2,7 @@ package com.zhd.basics.javabase.collections;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 
 /**
  * @Author: zhanghaodong
@@ -24,6 +25,9 @@ public class MapList {
         System.out.println(map);
         ArrayList<String> arrayList = new ArrayList<String>();
 
+        ThreadLocal;
+
+        LinkedHashMap
 
 
     }
