@@ -25,10 +25,6 @@ public class MapList {
         System.out.println(map);
         ArrayList<String> arrayList = new ArrayList<String>();
 
-        ThreadLocal;
-
-        LinkedHashMap
-
 
     }
 
