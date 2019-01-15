@@ -18,18 +18,20 @@ public class MySort {
      */
     public static void main(String[] args) {
         int[] arr = {1, 4, 2, 6, 9, 4, 102, 5, 6, 8, 2, 34, 54, 12, 3, -10, -8, 100, 99};
-        int[] myArr = {101, 1, 60, 9, 108, 20, 188};
-        shuaxin(myArr, 0, myArr.length - 1, 2);
-        System.out.println(Arrays.toString(myArr));
+//        int[] myArr = {101, 1, 60, 9, 108, 20, 188};
+//        shuaxin(myArr, 0, myArr.length - 1, 2);
+//        System.out.println(Arrays.toString(myArr));
 //        System.out.println(Arrays.toString(maopao(arr)));
 //        System.out.println(Arrays.toString(xuanze(arr)));
 //        System.out.println(Arrays.toString(charu(arr)));
 //        System.out.println(Arrays.toString(guibing(arr)));
 //        kuaisu(arr, 0, arr.length - 1);
 //        System.out.println(Arrays.toString(arr));
+        shellSort(arr);
+        System.out.println(Arrays.toString(arr));
 
 
-//        如何在 O(n) 的时间复杂度内查找一个无序数组中的第 K 大元素？
+//        如何在 O(n) 的时间复杂度内查找一个无序数组中的第 K 大元素？快排的思想
 
 
     }
@@ -77,6 +79,26 @@ public class MySort {
                 arr[min_index] = arr[i];
                 arr[i] = temp;
             }
+        }
+        return arr;
+    }
+
+    /**
+     * 希尔排序：原地排序，时间复杂度O(n^2)，不稳定排序
+     *
+     * @param arr
+     * @return
+     */
+    public static int[] shellSort(int[] arr) {
+
+        int increase = arr.length / 2 + 1;
+        while (increase > 1) {
+            for (int i = 0; i < arr.length - increase; i++) {
+                if (arr[i] > arr[i + increase]) {
+                    swap(arr, i, i + increase);
+                }
+            }
+            increase--;
         }
         return arr;
     }
