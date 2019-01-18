@@ -1,5 +1,7 @@
 package com.zhd.basics.javabase.suanfa;
 
+import java.util.HashMap;
+
 public class AtomicTest3 {
 	public static void main(String[] args) {
 		String str = "ABCDEFG";
