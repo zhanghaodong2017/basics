@@ -50,6 +50,7 @@ public class BitMap {
         BitMap bitMap = new BitMap(15);
         bitMap.set(9);
         System.out.println(bitMap.get(9));
+        String ceshi = "ceshi";
 
 
     }
