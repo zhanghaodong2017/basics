@@ -1,9 +1,6 @@
 package com.zhd.basics.javabase.suanfa;
 
-import com.googlecode.javaewah.EWAHCompressedBitmap;
-import com.googlecode.javaewah32.EWAHCompressedBitmap32;
-import com.sun.prism.shader.Solid_TextureYV12_AlphaTest_Loader;
-import sun.applet.Main;
+import org.apache.commons.lang.math.RandomUtils;
 
 import java.io.UnsupportedEncodingException;
 import java.util.BitSet;
@@ -21,6 +18,45 @@ public class BitMap {
     public BitMap(int nbits) {
         this.bytes = new char[nbits / 16 + 1];
         this.nbits = nbits;
+    }
+
+    public static void main(String[] args) throws UnsupportedEncodingException {
+        BitMap bitMap = new BitMap(15);
+        bitMap.set(9);
+        System.out.println(bitMap.get(9));
+        String ceshi = "ceshi";
+        System.out.println(Integer.MAX_VALUE);
+
+        sort();
+    }
+
+    /**
+     *
+     */
+    private static void sort() {
+        createData();
+    }
+
+    /**
+     * 生成数据
+     */
+    private static void createData() {
+        BitSet bitSet = new BitSet();
+        for (int k = 0; k < 10000000; k++) {
+            int random = getRandom();
+            while (bitSet.get(random)) {
+                random = getRandom();
+            }
+            bitSet.set(random);
+            System.out.println(random);
+        }
+
+
+    }
+
+    public static int getRandom() {
+        int i = RandomUtils.nextInt(Integer.MAX_VALUE);
+        return i;
     }
 
     public void set(int k) {
@@ -46,12 +82,4 @@ public class BitMap {
         return (bytes[byteIndex] & (1 << bitIndex)) != 0;
     }
 
-    public static void main(String[] args) throws UnsupportedEncodingException {
-        BitMap bitMap = new BitMap(15);
-        bitMap.set(9);
-        System.out.println(bitMap.get(9));
-        String ceshi = "ceshi";
-
-
-    }
 }

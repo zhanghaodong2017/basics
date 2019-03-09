@@ -33,7 +33,7 @@ public class MySort {
 //        System.out.println(Arrays.toString(xuanze(arr)));
 //        System.out.println(Arrays.toString(charu(arr)));
 //        System.out.println(Arrays.toString(guibing(arr)));
-//        kuaisu(arr, 0, arr.length - 1);
+//        \kuaisu(arr, 0, arr.length - 1);
 //        System.out.println(Arrays.toString(arr));
         shellSort(arr);
         System.out.println(Arrays.toString(arr));
